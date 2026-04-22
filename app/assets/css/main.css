@@ -1,1 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap");
 @import "tailwindcss";
+
+:root {
+	--brand-bg: #f8fafc;
+	--brand-text: #0f172a;
+	--brand-accent: #fbbf24;
+}
+
+html,
+body,
+#__nuxt {
+	min-height: 100%;
+}
+
+body {
+	background-color: var(--brand-bg);
+	color: var(--brand-text);
+	font-family: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Space Grotesk", "Outfit", sans-serif;
+	letter-spacing: -0.02em;
+}
+
+::selection {
+	background: color-mix(in srgb, var(--brand-accent) 70%, white);
+	color: #111827;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	main > * {
+		animation: reveal-up 560ms ease both;
+	}
+}
+
+@keyframes reveal-up {
+	from {
+		opacity: 0;
+		transform: translateY(12px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
