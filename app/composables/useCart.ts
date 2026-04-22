@@ -8,6 +8,8 @@ export type StoreProduct = {
   description: string;
   oldPrice: number;
   price: number;
+  format?: string;
+  condition?: string;
 };
 
 type CartItem = {

@@ -1,34 +1,33 @@
 <template>
   <section
-    class="relative overflow-hidden rounded-4xl border border-amber-200 bg-gradient-to-br from-amber-50 via-orange-50 to-cyan-50 p-6 shadow-sm sm:p-10"
+    class="relative overflow-hidden rounded-2xl border-2 border-[#9d7a52] bg-[#f2e6cf] p-6 shadow-[0_10px_30px_rgba(84,58,31,0.14)] sm:p-10"
   >
-    <div class="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-amber-300/40 blur-3xl" />
-    <div class="pointer-events-none absolute -left-16 bottom-0 h-44 w-44 rounded-full bg-cyan-300/40 blur-3xl" />
+    <div class="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(45deg,rgba(118,84,47,0.06),rgba(118,84,47,0.06)_2px,transparent_2px,transparent_10px)]" />
 
     <div class="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
       <div>
-        <p class="mb-3 inline-flex items-center gap-2 rounded-full bg-slate-900 px-3 py-1 text-xs font-semibold tracking-wide text-white uppercase">
-          Nueva temporada 2026
+        <p class="mb-3 inline-flex items-center gap-2 rounded-sm border border-[#6f4d2b] bg-[#5f4025] px-3 py-1 text-xs font-semibold tracking-[0.12em] text-[#f8e8cc] uppercase">
+          Seleccion de coleccionista
         </p>
 
-        <h1 class="text-balance text-4xl font-black text-slate-900 sm:text-5xl lg:text-6xl">
+        <h1 class="text-balance text-4xl font-semibold leading-tight text-[#2f2013] sm:text-5xl lg:text-6xl">
           {{ title }}
         </h1>
 
-        <p class="mt-4 max-w-xl text-base leading-relaxed text-slate-700 sm:text-lg">
+        <p class="mt-4 max-w-xl text-base leading-relaxed text-[#5a4128] sm:text-lg">
           {{ subtitle }}
         </p>
 
         <div class="mt-7 flex flex-wrap items-center gap-3">
           <NuxtLink
             to="#productos"
-            class="rounded-xl bg-slate-900 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-700"
+            class="rounded-md border border-[#4e341f] bg-[#5c3d24] px-5 py-3 text-sm font-semibold tracking-wide text-[#f8ead0] transition hover:-translate-y-0.5 hover:bg-[#4f341f]"
           >
             Ver productos
           </NuxtLink>
           <NuxtLink
             to="#categorias"
-            class="rounded-xl border border-slate-300 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-800"
+            class="rounded-md border border-[#a58258] bg-[#f8efdd] px-5 py-3 text-sm font-semibold tracking-wide text-[#5a4128] transition hover:-translate-y-0.5 hover:border-[#6f4f2f]"
           >
             Explorar categorias
           </NuxtLink>
@@ -39,11 +38,11 @@
         <article
           v-for="item in highlights"
           :key="item.title"
-          class="rounded-2xl border border-white/80 bg-white/80 p-4 backdrop-blur"
+          class="rounded-xl border border-[#c4a883] bg-[#f8efdd] p-4"
         >
-          <p class="text-2xl">{{ item.emoji }}</p>
-          <h3 class="mt-2 text-sm font-bold text-slate-900">{{ item.title }}</h3>
-          <p class="mt-1 text-sm text-slate-600">{{ item.text }}</p>
+          <p class="text-xs font-bold tracking-[0.2em] text-[#8b633b] uppercase">{{ item.emoji }}</p>
+          <h3 class="mt-2 text-base font-semibold text-[#2f2013]">{{ item.title }}</h3>
+          <p class="mt-1 text-sm text-[#61472e]">{{ item.text }}</p>
         </article>
       </div>
     </div>

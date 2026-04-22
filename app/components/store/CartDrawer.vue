@@ -10,7 +10,7 @@
     >
       <div
         v-if="cartOpen"
-        class="fixed inset-0 z-40 bg-slate-950/40"
+        class="fixed inset-0 z-40 bg-[#1e130a]/45"
         @click="closeCart"
       />
     </transition>
@@ -25,16 +25,16 @@
     >
       <aside
         v-if="cartOpen"
-        class="fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col border-l border-slate-200 bg-white"
+        class="fixed right-0 top-0 z-50 flex h-full w-full max-w-md flex-col border-l-2 border-[#8a6845] bg-[#f4e8d2]"
       >
-        <header class="flex items-center justify-between border-b border-slate-200 px-5 py-4">
+        <header class="flex items-center justify-between border-b border-[#b79267] px-5 py-4">
           <div>
-            <p class="text-xs font-semibold tracking-widest text-slate-500 uppercase">Tu carrito</p>
-            <h3 class="text-lg font-black text-slate-900">{{ itemCount }} producto(s)</h3>
+            <p class="text-xs font-semibold tracking-[0.14em] text-[#7e5d3d] uppercase">Tu carrito</p>
+            <h3 class="text-2xl font-semibold text-[#2f2013]">{{ itemCount }} producto(s)</h3>
           </div>
           <button
             type="button"
-            class="rounded-lg border border-slate-300 px-2.5 py-1.5 text-xs font-semibold text-slate-700 hover:border-slate-900"
+            class="rounded-md border border-[#9f7d55] bg-[#f7f0e2] px-2.5 py-1.5 text-xs font-semibold tracking-wide text-[#5b4025] hover:border-[#6f4f2f]"
             @click="closeCart"
           >
             Cerrar
@@ -44,8 +44,8 @@
         <div class="flex-1 overflow-y-auto px-5 py-4">
           <div v-if="!cartItems.length" class="grid h-full place-items-center text-center">
             <div>
-              <p class="text-sm font-semibold text-slate-700">Tu carrito esta vacio</p>
-              <p class="mt-1 text-sm text-slate-500">Agrega productos para verlos aqui.</p>
+              <p class="text-sm font-semibold text-[#4d3520]">Tu carrito esta vacio</p>
+              <p class="mt-1 text-sm text-[#7c5e42]">Agrega productos para verlos aqui.</p>
             </div>
           </div>
 
@@ -53,17 +53,17 @@
             <li
               v-for="item in cartItems"
               :key="item.product.id"
-              class="rounded-2xl border border-slate-200 p-3"
+              class="rounded-xl border border-[#b79267] bg-[#f8efdd] p-3"
             >
               <div class="flex items-start justify-between gap-3">
                 <div>
-                  <p class="text-xs font-semibold tracking-wide text-slate-500 uppercase">{{ item.product.brand }}</p>
-                  <p class="text-sm font-bold text-slate-900">{{ item.product.name }}</p>
-                  <p class="mt-1 text-sm text-slate-600">{{ formatPrice(item.product.price) }} c/u</p>
+                  <p class="text-xs font-semibold tracking-[0.12em] text-[#7c5b3d] uppercase">{{ item.product.brand }}</p>
+                  <p class="text-sm font-bold text-[#2f2013]">{{ item.product.name }}</p>
+                  <p class="mt-1 text-sm text-[#5e452d]">{{ formatPrice(item.product.price) }} c/u</p>
                 </div>
                 <button
                   type="button"
-                  class="text-xs font-semibold text-rose-600 hover:text-rose-700"
+                  class="text-xs font-semibold text-[#a0322a] hover:text-[#7a251e]"
                   @click="removeItem(item.product.id)"
                 >
                   Quitar
@@ -71,25 +71,25 @@
               </div>
 
               <div class="mt-3 flex items-center justify-between">
-                <div class="flex items-center rounded-xl border border-slate-200">
+                <div class="flex items-center rounded-md border border-[#b79267] bg-[#f1e4cc]">
                   <button
                     type="button"
-                    class="px-3 py-1.5 text-sm font-bold text-slate-700"
+                    class="px-3 py-1.5 text-sm font-bold text-[#5b4025]"
                     @click="decreaseQty(item.product.id)"
                   >
                     -
                   </button>
-                  <span class="min-w-9 text-center text-sm font-semibold text-slate-900">{{ item.quantity }}</span>
+                  <span class="min-w-9 text-center text-sm font-semibold text-[#2f2013]">{{ item.quantity }}</span>
                   <button
                     type="button"
-                    class="px-3 py-1.5 text-sm font-bold text-slate-700"
+                    class="px-3 py-1.5 text-sm font-bold text-[#5b4025]"
                     @click="increaseQty(item.product.id)"
                   >
                     +
                   </button>
                 </div>
 
-                <p class="text-sm font-bold text-slate-900">
+                <p class="text-sm font-bold text-[#2f2013]">
                   {{ formatPrice(item.product.price * item.quantity) }}
                 </p>
               </div>
@@ -97,31 +97,31 @@
           </ul>
         </div>
 
-        <footer class="space-y-3 border-t border-slate-200 px-5 py-4">
-          <div class="flex items-center justify-between text-sm text-slate-600">
+        <footer class="space-y-3 border-t border-[#b79267] px-5 py-4">
+          <div class="flex items-center justify-between text-sm text-[#664c32]">
             <span>Subtotal</span>
-            <span class="font-semibold text-slate-900">{{ formatPrice(subtotal) }}</span>
+            <span class="font-semibold text-[#2f2013]">{{ formatPrice(subtotal) }}</span>
           </div>
-          <div class="flex items-center justify-between text-sm text-slate-600">
+          <div class="flex items-center justify-between text-sm text-[#664c32]">
             <span>Envio</span>
-            <span class="font-semibold text-slate-900">{{ shipping ? formatPrice(shipping) : "Gratis" }}</span>
+            <span class="font-semibold text-[#2f2013]">{{ shipping ? formatPrice(shipping) : "Gratis" }}</span>
           </div>
-          <div class="flex items-center justify-between border-t border-slate-200 pt-3 text-sm">
-            <span class="font-semibold text-slate-700">Total</span>
-            <span class="text-lg font-black text-slate-900">{{ formatPrice(total) }}</span>
+          <div class="flex items-center justify-between border-t border-[#b79267] pt-3 text-sm">
+            <span class="font-semibold text-[#5b4025]">Total</span>
+            <span class="text-lg font-bold text-[#2f2013]">{{ formatPrice(total) }}</span>
           </div>
 
           <div class="grid gap-2">
             <button
               type="button"
-              class="rounded-xl bg-slate-900 px-4 py-3 text-sm font-bold text-white transition hover:bg-slate-700"
+              class="rounded-md border border-[#4e341f] bg-[#5c3d24] px-4 py-3 text-sm font-bold tracking-wide text-[#f8ead0] transition hover:bg-[#4f341f]"
               :disabled="!cartItems.length"
             >
               Finalizar compra
             </button>
             <button
               type="button"
-              class="rounded-xl border border-slate-300 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:border-slate-900 disabled:opacity-40"
+              class="rounded-md border border-[#9f7d55] bg-[#f7f0e2] px-4 py-3 text-sm font-semibold tracking-wide text-[#5b4025] transition hover:border-[#6f4f2f] disabled:opacity-40"
               :disabled="!cartItems.length"
               @click="clearCart"
             >

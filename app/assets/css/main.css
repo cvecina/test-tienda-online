@@ -1,10 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Libre+Baskerville:wght@400;700&display=swap");
 @import "tailwindcss";
 
 :root {
-	--brand-bg: #f8fafc;
-	--brand-text: #0f172a;
-	--brand-accent: #fbbf24;
+	--brand-bg: #efe5d2;
+	--brand-text: #2f2216;
+	--brand-accent: #9a6a3a;
+	--brand-line: #b89a72;
 }
 
 html,
@@ -15,8 +16,12 @@ body,
 
 body {
 	background-color: var(--brand-bg);
+	background-image:
+		radial-gradient(circle at 14% 16%, rgb(255 255 255 / 0.28), transparent 32%),
+		radial-gradient(circle at 84% 10%, rgb(132 94 49 / 0.14), transparent 30%),
+		linear-gradient(180deg, #f4ead8 0%, #e8dcc6 100%);
 	color: var(--brand-text);
-	font-family: "Outfit", "Avenir Next", "Segoe UI", sans-serif;
+	font-family: "Libre Baskerville", "Palatino", serif;
 }
 
 h1,
@@ -25,13 +30,13 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Space Grotesk", "Outfit", sans-serif;
-	letter-spacing: -0.02em;
+	font-family: "Cormorant Garamond", "Times New Roman", serif;
+	letter-spacing: 0.01em;
 }
 
 ::selection {
-	background: color-mix(in srgb, var(--brand-accent) 70%, white);
-	color: #111827;
+	background: color-mix(in srgb, var(--brand-accent) 40%, white);
+	color: #1f130a;
 }
 
 @media (prefers-reduced-motion: no-preference) {
