@@ -1,0 +1,21 @@
+{
+  "projectName": "Mi App Empresarial",
+  "companyName": "Tech Solutions Inc",
+  "description": "Sistema de gestión empresarial moderno",
+  "author": "Carlos Vecina",
+  "layouts": [
+    "default",
+    "dashboard"
+  ],
+  "features": [
+    "tables",
+    "auth",
+    "dynamic-nav"
+  ],
+  "theme": "blue",
+  "roles": [
+    "public",
+    "empleado",
+    "empresa"
+  ]
+}
