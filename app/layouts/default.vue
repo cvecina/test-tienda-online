@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <NavigationNavbarClassic />
+    <!-- <NavigationNavbarClassic /> -->
     <main class="py-8">
       <slot />
     </main>
